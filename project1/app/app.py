@@ -53,7 +53,7 @@ class HostName(Resource):
 api.add_resource(HelloWorld, "/")
 api.add_resource(S3Resource, "/resource")
 api.add_resource(S3SignedUrl, "/signed-url")
-api.add_resource(S3SignedUrl, "/hostname")
+api.add_resource(HostName, "/hostname")
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0")
