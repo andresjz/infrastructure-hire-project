@@ -3,6 +3,11 @@ variable "project_name_prefix" {
     default = "ops-hire-project"
 }
 
+variable "aws_region" {
+  description = "The AWS region to create things in."
+  default     = "us-east-1"
+}
+
 variable "aws_zone" {
     description = "The AWS zone to create things in."
     default = "us-east-1b"

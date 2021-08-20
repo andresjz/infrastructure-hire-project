@@ -3,7 +3,8 @@ name: publish-app
 on:
   push:
     branches:
-      - develop
+      - master
+      - TASK-6
 
 jobs:
   publish-app:

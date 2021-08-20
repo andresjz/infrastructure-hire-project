@@ -11,6 +11,10 @@ data "template_file" "app" {
     app_image = var.app_image
     fargate_memory = var.fargate_memory
     app_port = var.app_port
+    app_access_key_id = aws_iam_access_key.iam_s3_access.id
+    app_access_secret_key = aws_iam_access_key.iam_s3_access.secret
+    app_default_region = var.aws_region
+    app_bucket_name = aws_s3_bucket.ops_hire_app_bucket.id
   }
 }
 
