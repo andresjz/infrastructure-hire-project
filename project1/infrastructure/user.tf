@@ -18,10 +18,11 @@ resource "aws_iam_user_policy" "app_policy" {
     {
       "Action": [
         "s3:Get*",
-        "s3:List*"
+        "s3:List*",
+        "s3:HeadBucket"
       ],
       "Effect": "Allow",
-      "Resource": "${aws_s3_bucket.ops_hire_app_bucket.arn}"
+      "Resource": "${aws_s3_bucket.ops_hire_app_bucket.arn}/*"
     }
   ]
 }
