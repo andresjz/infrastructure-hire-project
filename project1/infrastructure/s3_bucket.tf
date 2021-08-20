@@ -6,8 +6,3 @@ resource "aws_s3_bucket" "ops_hire_app_bucket" {
     enabled = true
   }
 }
-
-output "bucket_id" {
-  value       = aws_s3_bucket.ops_hire_app_bucket.id
-  description = "Bucket Name (aka ID)"
-}
