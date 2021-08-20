@@ -1,34 +1,21 @@
-variable "project_name_prefix" {
-    description = "Name of the project"
-    default = "ops-hire-project"
-}
-
 variable "aws_region" {
   description = "The AWS region to create things in."
   default     = "us-east-1"
 }
 
-variable "aws_zone" {
-    description = "The AWS zone to create things in."
-    default = "us-east-1b"
-}
-
-variable "aws_az_count" {
-    description = "Number of availability_zones to cover in the region"
-    default = 2
+variable "az_count" {
+  description = "Number of AZs to cover in a given AWS region"
+  default     = "2"
 }
 
 variable "app_image" {
   description = "Docker image to run in the ECS cluster"
-}
-
-variable "ecs_role" {
-  description = "ECS role to allow access to the ECR repository"
+  default     = "adongy/hostname-docker:latest"
 }
 
 variable "app_port" {
   description = "Port exposed by the docker image to redirect traffic to"
-  default     = 8080
+  default     = 3000
 }
 
 variable "app_count" {
@@ -46,3 +33,6 @@ variable "fargate_memory" {
   default     = "512"
 }
 
+output "alb_hostname" {
+  value = "${aws_alb.main.dns_name}"
+}
